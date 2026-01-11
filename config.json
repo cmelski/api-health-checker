@@ -1,0 +1,27 @@
+{
+  "environment": "test",
+  "timeout": 5,
+  "endpoints": [
+    {
+      "name": "products_api",
+      "method": "GET",
+      "url": "https://api.restful-api.dev/objects",
+      "expected_status": 200
+    },
+    {
+      "name": "add_product_api",
+      "method": "POST",
+      "url": "https://api.restful-api.dev/objects",
+      "payload": {
+        "name": "Test Product",
+        "data": {
+          "year": 2025,
+          "price": 1849.99,
+          "CPU model": "Intel Core i9",
+          "Hard disk size": "1 TB"
+        }
+      },
+      "expected_status": 200
+    }
+  ]
+}
