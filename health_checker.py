@@ -63,13 +63,15 @@ try:
     log().logger.info(f'Making API Test Call with parameters: {cli_endpoint}, {params[0]}, '
                       f'{params[1]}, {params[2]}, {payload}')
     api_response = api_util().post(endpoint=url, data=payload)
-    validate().validate_api_response(api_response,expected_status_code)
+    log().logger.info(f'API response: {api_response.json()}')
+    validate().validate_api_response(api_response,expected_status_code, cli_endpoint)
 except:
     log().logger.info('Payload not present in this endpoint. This is a GET request.')
 
     log().logger.info(f'Making API Test Call with parameters: {cli_endpoint}, {params[0]}, '
                       f'{params[1]}, {params[2]}')
     api_response = api_util().get(endpoint=url)
-    validate().validate_api_response(api_response,expected_status_code)
+    log().logger.info(f'API response: {api_response.json()}')
+    validate().validate_api_response(api_response,expected_status_code, cli_endpoint)
 
 
